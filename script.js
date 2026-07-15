@@ -110,4 +110,4 @@ animate();
 
 console.log(canvas);
 console.log(ctx); 
-*//*
+*/
