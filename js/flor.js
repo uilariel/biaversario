@@ -1,10 +1,14 @@
 let galhos = [];
 let galhosRevelados = 0;
 
+let pontasFinais = [];
+let pontasFinaisReveladas = 0;
+
+
 
 
 //VAR UTEIS PARA OS GALHOS
-const maxNivel = Math.random() * 3 + 5; //entre 5 e 8 niveis totais
+const maxNivel = Math.floor(Math.random() * 3 + 6); //entre 5 e 9 niveis totais
 let nivel  = 0; //nivel inicial sempre comeca em 0
 let x = 512; //posicao x e y inicial, ainda vou alterar
 let y = 850; 
@@ -32,9 +36,13 @@ function gerarGalhos(x, y, comprimento, anguloGraus, nivel, maxNivel){
     const novoX = x + comprimento * Math.cos(anguloRad);
     const novoY = y + comprimento * Math.sin(anguloRad);
 
-    galhos.push({x1: x, y1: y, x2: novoX, y2: novoY})
+    galhos.push({x1: x, y1: y, x2: novoX, y2: novoY, comprimento: comprimento})
 
-    if (nivel === maxNivel) return;
+    if (nivel === maxNivel){
+        //capturando a posicao x e y dos ramos do ultimo nivel
+        pontasFinais.push({x: novoX, y: novoY, raio: 5})  
+        return
+    };
 
     //cada ramo se divide em 2 ou 3
     const numFilhos =  2 + Math.floor(Math.random() * 2 );
