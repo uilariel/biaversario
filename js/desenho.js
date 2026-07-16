@@ -1,6 +1,6 @@
 function desenharGalhos(){
 
-    for(let i = 0; i < galhos.length && i < galhosRevelados; i++){
+    for(let i = 0; i < galhos.length; i++){
 
        
         const meioX = (galhos[i].x1 + galhos[i].x2) / 2 + (galhos[i].y1 - galhos[i].y2) * galhos[i].curvatura
@@ -21,7 +21,7 @@ mas futuramente pretendo deixar ele em tamanhos aleatorios ou proporcionais ao t
 
 */
 function desenharMiolos(){
-    for(let i = 0; i < pontasFinais.length && i < pontasFinaisReveladas; i++){
+    for(let i = 0; i < pontasFinais.length; i++){
         ctx.beginPath();
         ctx.fillStyle = '#c7ae11'
         ctx.arc(pontasFinais[i].x, pontasFinais[i].y, pontasFinais[i].raio, 0, 2 * Math.PI)
@@ -32,7 +32,7 @@ function desenharMiolos(){
 function desenharPetalas(){
 
     //determinar as possiveis cores 
-    for(let i = 0; i < bordaMiolo.length && petalasReveladas; i++){
+    for(let i = 0; i < bordaMiolo.length; i++){
         //p -> petala
         const p = bordaMiolo[i];
         const anguloPerpRad = (p.angulo + 90) * Math.PI / 180;

@@ -10,6 +10,7 @@ let petalasReveladas = []
 let petalas = [];
 
 
+
 //possiveis cores de petalas
 const coresPossiveis = [
     { nome: 'vermelho', hueMin: 355, hueMax: 375, sat: 65, lum: 65 },
@@ -27,10 +28,10 @@ const coresPossiveis = [
 const maxNivel = Math.floor(Math.random() * 2 + 5); //entre 5 e 9 niveis totais
 let nivel  = 0; //nivel inicial sempre comeca em 0
 let x = 512; //posicao x e y inicial, ainda vou alterar
-let y = 850; 
+let y = 900; 
 let comprimento = 80 + Math.random() * 60; //comprimento do primeiro ramo sempre entre 80 e 140
-//let anguloGraus = 225 + Math.random() * 90; // -> caso queira ramdomizar 
-let anguloGraus = 270; //angulo do primeiro ramo, pensando se vale a pena randomizar isso ou nao
+let anguloGraus = 250 + Math.random() * 40; // -> caso queira ramdomizar 
+//let anguloGraus = 270; //angulo do primeiro ramo, pensando se vale a pena randomizar isso ou nao
 
 /*
 ===========================
@@ -80,7 +81,7 @@ function gerarGalhos(x, y, comprimento, anguloGraus, nivel, maxNivel){
 }
 
 
-//essa bomba gera as petalas, tem q mudar 
+//essa bomba gera as petalas, tem q mudar o nome
 //bordaMiolo eh pra ser o vetor que guarda a informacao de onde comeca a circunferencia do circulo (linha que delimita o fim dele)
 function gerarBordasMiolo(){
    const comprimentoPetala = 20;

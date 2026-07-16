@@ -17,15 +17,15 @@ gerarGalhos(x, y, comprimento, anguloGraus, nivel, maxNivel);
 gerarBordasMiolo();
 inicializarNuvem();
 
-galhosRevelados = galhos.length;
-pontasFinaisReveladas = pontasFinais.length;
-petalasReveladas = bordaMiolo.length;
-
 let contadorFrames = 0;
 
+//loop de animacao
 function loop(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    desenharCeu();
+    desenharGrama();
+    desenharSol();
     if(chovendo){
         contadorFrames++;
         if(contadorFrames % 5 === 0){
